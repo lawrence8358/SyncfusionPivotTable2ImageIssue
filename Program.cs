@@ -29,6 +29,9 @@ namespace SyncfusionPivotTable2ImageIssue
             pivotTable.DataFields.Add(pivotTable.Fields[2], "Sum1", PivotSubtotalTypes.Sum);
             pivotTable.DataFields.Add(pivotTable.Fields[3], "Sum2", PivotSubtotalTypes.Sum);
 
+            // 注意，底下此行很重要，若不執行此行，在轉 PDF or Image 的時後，會無法正確的顯示樞紐分析表的區域
+            pivotTable.Layout();
+             
             //Initialize XlsIORenderer
             application.XlsIORenderer = new XlsIORenderer();
 
